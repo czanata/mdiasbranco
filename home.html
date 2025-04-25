@@ -2,59 +2,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Portal Cliente | Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body { background-color: #f8fafc; }
-    .sidebar { min-height: 100vh; background-color: #0d6efd; color: white; }
-    .sidebar a { color: white; text-decoration: none; display: block; padding: 15px; }
-    .sidebar a:hover { background-color: #0b5ed7; }
-  </style>
+<meta charset="UTF-8">
+<title>Portal Cliente | Home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { background-color: #f8fafc; }
+  .sidebar { min-height: 100vh; background-color: #0d6efd; color: white; }
+  .sidebar a { color: white; text-decoration: none; display: block; padding: 15px; }
+  .sidebar a:hover { background-color: #0b5ed7; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <div class="d-flex">
-  <div class="sidebar p-3">
-    <h4>M. Dias Branco</h4>
-    <a href="home.html">🏠 Home</a>
-    <a href="pedidos.html">🛒 Meus Pedidos</a>
-    <a href="solicitacoes.html">📑 Minhas Solicitações</a>
-  </div>
-  <div class="p-4 flex-grow-1">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <h2>Bem-vindo ao Portal do Cliente</h2>
-      <button class="btn btn-outline-primary">Logout</button>
-    </div>
-    <p>Selecione uma opção no menu à esquerda para começar.</p>
-  </div>
+<div class="sidebar p-3">
+  <h4>M. Dias Branco</h4>
+  <a href="home.html">🏠 Home</a>
+  <a href="pedidos.html">🛒 Meus Pedidos</a>
+  <a href="solicitacoes.html">📑 Minhas Solicitações</a>
+</div>
+<div class="p-4 flex-grow-1">
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>Bem-vindo ao Portal do Cliente</h2>
+  <button class="btn btn-outline-primary">Logout</button>
 </div>
 
-<!-- Botão flutuante do suporte -->
-<button type="button" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px;" data-bs-toggle="modal" data-bs-target="#chatBotModal">
-🤖
-</button>
-
-<!-- Modal do ChatBot -->
-<div class="modal fade" id="chatBotModal" tabindex="-1" aria-labelledby="chatBotModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="chatBotModalLabel">Suporte Online</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<div class="row mb-4">
+  <div class="col-md-4">
+    <div class="card text-white bg-success mb-3">
+      <div class="card-header">Pedidos Concluídos</div>
+      <div class="card-body">
+        <h5 class="card-title">3</h5>
       </div>
-      <div class="modal-body">
-        <div style="height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
-          <div class="alert alert-primary p-2">Olá! Sou o Assistente Virtual. Como posso ajudar?</div>
-          <div class="alert alert-secondary p-2 align-self-end">Preciso da segunda via do meu boleto.</div>
-          <div class="alert alert-primary p-2">Certo! Você pode acessar a opção "Meus Pedidos" e clicar no pedido desejado para baixar o boleto.</div>
-        </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-dark bg-warning mb-3">
+      <div class="card-header">Pedidos Faturados</div>
+      <div class="card-body">
+        <h5 class="card-title">2</h5>
       </div>
-      <div class="modal-footer">
-        <input type="text" class="form-control" placeholder="Digite sua mensagem..." disabled>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-white bg-info mb-3">
+      <div class="card-header">Pedidos em Transporte</div>
+      <div class="card-body">
+        <h5 class="card-title">5</h5>
       </div>
     </div>
   </div>
 </div>
 
+<div class="row mb-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">Status dos Pedidos</div>
+      <div class="card-body">
+        <img src="grafico_pedidos.png" class="img-fluid">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">Status das Solicitações</div>
+      <div class="card-body">
+        <img src="grafico_solicitacoes.png" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
 </body>
 </html>
