@@ -2,61 +2,118 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Portal Cliente | Minhas Solicitações</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<meta charset="UTF-8">
+<title>Portal Cliente | Minhas Solicitações</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+  body { background-color: #f8fafc; }
+  .sidebar { min-height: 100vh; background-color: #0d6efd; color: white; }
+  .sidebar a { color: white; text-decoration: none; display: block; padding: 15px; }
+  .sidebar a:hover { background-color: #0b5ed7; }
+</style>
 </head>
-<body class="p-4">
-  <div class="d-flex justify-content-between mb-3">
-    <h2>Minhas Solicitações</h2>
-    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#novaSolicitacaoModal">Nova Solicitação</button>
-  </div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th># Ticket</th>
-        <th>Status</th>
-        <th>Data de Abertura</th>
-        <th>Data Estimada de Encerramento</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>789123</td>
-        <td><span class="badge bg-warning text-dark">Em Análise</span></td>
-        <td>24/04/2025</td>
-        <td>29/04/2025</td>
-      </tr>
-    </tbody>
-  </table>
+<body>
+<div class="d-flex">
+<div class="sidebar p-3">
+  <h4>M. Dias Branco</h4>
+  <a href="home.html">🏠 Home</a>
+  <a href="pedidos.html">🛒 Meus Pedidos</a>
+  <a href="solicitacoes.html">📑 Minhas Solicitações</a>
+</div>
+<div class="p-4 flex-grow-1">
+<div class="d-flex justify-content-between mb-3">
+<h2>Minhas Solicitações</h2>
+<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#novaSolicitacaoModal">Nova Solicitação</button>
+</div>
+<table class="table table-hover">
+<thead>
+<tr>
+<th># Ticket</th>
+<th>Status</th>
+<th>Data de Abertura</th>
+<th>Data Estimada de Encerramento</th>
+</tr>
+</thead>
+<tbody>
 
-  <!-- Modal Nova Solicitação -->
-  <div class="modal fade" id="novaSolicitacaoModal" tabindex="-1" aria-labelledby="novaSolicitacaoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Nova Solicitação</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label class="form-label">Descreva o seu caso:</label>
-              <textarea class="form-control" rows="4"></textarea>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Pedido Relacionado (opcional):</label>
-              <select class="form-select">
-                <option selected>Selecione...</option>
-                <option>#456789 - Entregue</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Enviar Solicitação</button>
-          </form>
-        </div>
+<tr>
+<td>780000</td>
+<td><span class="badge bg-info text-dark">Aberto</span></td>
+<td>20/04/2025</td>
+<td>24/04/2025</td>
+</tr>
+<tr>
+<td>780001</td>
+<td><span class="badge bg-info text-dark">Em Análise</span></td>
+<td>21/04/2025</td>
+<td>26/04/2025</td>
+</tr>
+<tr>
+<td>780002</td>
+<td><span class="badge bg-info text-dark">Aberto</span></td>
+<td>22/04/2025</td>
+<td>27/04/2025</td>
+</tr>
+<tr>
+<td>780003</td>
+<td><span class="badge bg-info text-dark">Em Análise</span></td>
+<td>23/04/2025</td>
+<td>27/04/2025</td>
+</tr>
+<tr>
+<td>780004</td>
+<td><span class="badge bg-info text-dark">Em Análise</span></td>
+<td>24/04/2025</td>
+<td>27/04/2025</td>
+</tr>
+<tr>
+<td>780005</td>
+<td><span class="badge bg-info text-dark">Encerrado</span></td>
+<td>25/04/2025</td>
+<td>28/04/2025</td>
+</tr>
+</tbody>
+</table>
+
+<!-- Modal Nova Solicitação -->
+<div class="modal fade" id="novaSolicitacaoModal" tabindex="-1" aria-labelledby="novaSolicitacaoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Nova Solicitação</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Descreva o seu caso:</label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Pedido Relacionado (opcional):</label>
+            <select class="form-select">
+              <option selected>Selecione...</option>
+              <option>Pedido #450000</option>
+              <option>Pedido #450001</option>
+              <option>Pedido #450002</option>
+              <option>Pedido #450003</option>
+              <option>Pedido #450004</option>
+              <option>Pedido #450005</option>
+              <option>Pedido #450006</option>
+              <option>Pedido #450007</option>
+              <option>Pedido #450008</option>
+              <option>Pedido #450009</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Enviar Solicitação</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
+</div>
+</div>
 </body>
 </html>
