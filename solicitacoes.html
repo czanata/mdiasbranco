@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Cliente | Minhas Solicitações</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="p-4">
+  <div class="d-flex justify-content-between mb-3">
+    <h2>Minhas Solicitações</h2>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#novaSolicitacaoModal">Nova Solicitação</button>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th># Ticket</th>
+        <th>Status</th>
+        <th>Data de Abertura</th>
+        <th>Data Estimada de Encerramento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>789123</td>
+        <td><span class="badge bg-warning text-dark">Em Análise</span></td>
+        <td>24/04/2025</td>
+        <td>29/04/2025</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal Nova Solicitação -->
+  <div class="modal fade" id="novaSolicitacaoModal" tabindex="-1" aria-labelledby="novaSolicitacaoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Nova Solicitação</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Descreva o seu caso:</label>
+              <textarea class="form-control" rows="4"></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Pedido Relacionado (opcional):</label>
+              <select class="form-select">
+                <option selected>Selecione...</option>
+                <option>#456789 - Entregue</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar Solicitação</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
