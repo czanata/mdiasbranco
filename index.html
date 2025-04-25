@@ -26,5 +26,33 @@
     </form>
   </div>
 </div>
+
+<!-- Botão flutuante do suporte -->
+<button type="button" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px;" data-bs-toggle="modal" data-bs-target="#chatBotModal">
+🤖
+</button>
+
+<!-- Modal do ChatBot -->
+<div class="modal fade" id="chatBotModal" tabindex="-1" aria-labelledby="chatBotModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="chatBotModalLabel">Suporte Online</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div style="height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
+          <div class="alert alert-primary p-2">Olá! Sou o Assistente Virtual. Como posso ajudar?</div>
+          <div class="alert alert-secondary p-2 align-self-end">Preciso da segunda via do meu boleto.</div>
+          <div class="alert alert-primary p-2">Certo! Você pode acessar a opção "Meus Pedidos" e clicar no pedido desejado para baixar o boleto.</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <input type="text" class="form-control" placeholder="Digite sua mensagem..." disabled>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
