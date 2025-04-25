@@ -23,36 +23,15 @@
 </div>
 <div class="p-4 flex-grow-1">
 <h2>Meus Pedidos</h2>
+
+<!-- Barra de Pesquisa -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">🔍</span>
   <input type="text" class="form-control" id="searchInput" onkeyup="filterTable()" placeholder="Buscar pedidos...">
 </div>
-<script>
-function filterTable() {
-  var input, filter, table, tr, td, i, j, txtValue, show;
-  input = document.getElementById("searchInput");
-  filter = input.value.toUpperCase();
-  table = document.querySelector("table");
-  tr = table.getElementsByTagName("tr");
-  for (i = 1; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td");
-    show = false;
-    for (j = 0; j < td.length; j++) {
-      if (td[j]) {
-        txtValue = td[j].textContent || td[j].innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          show = true;
-          break;
-        }
-      }
-    }
-    tr[i].style.display = show ? "" : "none";
-  }
-}
-</script>
 
-<table class="table table-hover mt-3">
-<thead>
+<table class="table table-hover mt-3" id="pedidosTable">
+<thead class="table-light">
 <tr>
 <th># Pedido</th>
 <th>Data do Pedido</th>
@@ -64,419 +43,472 @@ function filterTable() {
 </thead>
 <tbody>
 
-<tr data-bs-toggle="collapse" data-bs-target="#itens450000" aria-expanded="false" aria-controls="itens450000">
+<tr>
   <td>450000</td>
   <td>20/04/2025</td>
   <td>27/04/2025</td>
   <td><span class="badge bg-info text-dark">Em Transporte</span></td>
   <td>R$ 5.091,02</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450000">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450000">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450000">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450000">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450000">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Biscoito Recheado Treloso Chocolate 130g</td>
 <td>87</td>
 <td>R$ 3.29</td>
 <td>R$ 243.46</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450000">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Granola Jasmine Tradicional – 250g</td>
 <td>81</td>
 <td>R$ 9.49</td>
 <td>R$ 180.31</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450000">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Margarina Amorela com Sal – 1kg</td>
 <td>69</td>
 <td>R$ 8.99</td>
 <td>R$ 107.88</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450000">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
-<tr data-bs-toggle="collapse" data-bs-target="#itens450001" aria-expanded="false" aria-controls="itens450001">
+
+<tr>
   <td>450001</td>
   <td>21/04/2025</td>
   <td>28/04/2025</td>
   <td><span class="badge bg-warning text-dark">Faturado</span></td>
   <td>R$ 7.738,61</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450001">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450001">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450001">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450001">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450001">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Granola Jasmine Tradicional – 250g</td>
 <td>34</td>
 <td>R$ 9.49</td>
 <td>R$ 398.58</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450001">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Margarina Amorela com Sal – 1kg</td>
 <td>54</td>
 <td>R$ 8.99</td>
 <td>R$ 638.29</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450001">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Espaguete Adria Nº8 – 1kg</td>
 <td>46</td>
 <td>R$ 6.99</td>
 <td>R$ 111.84</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450001">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
-<tr data-bs-toggle="collapse" data-bs-target="#itens450002" aria-expanded="false" aria-controls="itens450002">
+
+<tr>
   <td>450002</td>
   <td>22/04/2025</td>
   <td>29/04/2025</td>
   <td><span class="badge bg-success">Concluído</span></td>
   <td>R$ 10.976,02</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450002">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450002">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450002">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450002">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450002">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Farinha de Trigo Tipo 1 – 5kg</td>
 <td>52</td>
 <td>R$ 18.90</td>
 <td>R$ 1266.30</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450002">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Granola Jasmine Tradicional – 250g</td>
 <td>36</td>
 <td>R$ 9.49</td>
 <td>R$ 313.17</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450002">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Cream Cracker Piraquê – 200g</td>
 <td>47</td>
 <td>R$ 4.29</td>
 <td>R$ 115.83</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450002">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
-<tr data-bs-toggle="collapse" data-bs-target="#itens450003" aria-expanded="false" aria-controls="itens450003">
+
+<tr>
   <td>450003</td>
   <td>23/04/2025</td>
   <td>30/04/2025</td>
   <td><span class="badge bg-success">Concluído</span></td>
   <td>R$ 6.446,37</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450003">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450003">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450003">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450003">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450003">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Espaguete Adria Nº8 – 1kg</td>
 <td>99</td>
 <td>R$ 6.99</td>
 <td>R$ 167.76</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450003">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Granola Jasmine Tradicional – 250g</td>
 <td>25</td>
 <td>R$ 9.49</td>
 <td>R$ 389.09</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450003">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Biscoito Recheado Treloso Chocolate 130g</td>
 <td>83</td>
 <td>R$ 3.29</td>
 <td>R$ 273.07</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450003">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
-<tr data-bs-toggle="collapse" data-bs-target="#itens450004" aria-expanded="false" aria-controls="itens450004">
+
+<tr>
   <td>450004</td>
   <td>24/04/2025</td>
   <td>01/05/2025</td>
   <td><span class="badge bg-info text-dark">Em Transporte</span></td>
   <td>R$ 6.998,87</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450004">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450004">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450004">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450004">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450004">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Granola Jasmine Tradicional – 250g</td>
 <td>74</td>
 <td>R$ 9.49</td>
 <td>R$ 237.25</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450004">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Farinha de Trigo Tipo 1 – 5kg</td>
 <td>68</td>
 <td>R$ 18.90</td>
 <td>R$ 1587.60</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450004">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Cream Cracker Piraquê – 200g</td>
 <td>94</td>
 <td>R$ 4.29</td>
 <td>R$ 403.26</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450004">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
-<tr data-bs-toggle="collapse" data-bs-target="#itens450005" aria-expanded="false" aria-controls="itens450005">
+
+<tr>
   <td>450005</td>
   <td>25/04/2025</td>
   <td>02/05/2025</td>
   <td><span class="badge bg-warning text-dark">Faturado</span></td>
   <td>R$ 9.509,02</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450005">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450005">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450005">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450005">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450005">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Granola Jasmine Tradicional – 250g</td>
 <td>39</td>
 <td>R$ 9.49</td>
 <td>R$ 474.50</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450005">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Farinha de Trigo Tipo 1 – 5kg</td>
 <td>37</td>
 <td>R$ 18.90</td>
 <td>R$ 1190.70</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450005">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Biscoito Recheado Treloso Chocolate 130g</td>
 <td>89</td>
 <td>R$ 3.29</td>
 <td>R$ 75.67</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450005">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
-<tr data-bs-toggle="collapse" data-bs-target="#itens450006" aria-expanded="false" aria-controls="itens450006">
+
+<tr>
   <td>450006</td>
   <td>26/04/2025</td>
   <td>03/05/2025</td>
   <td><span class="badge bg-success">Concluído</span></td>
   <td>R$ 8.731,68</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450006">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450006">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450006">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450006">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450006">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Margarina Amorela com Sal – 1kg</td>
 <td>11</td>
 <td>R$ 8.99</td>
 <td>R$ 773.14</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450006">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Granola Jasmine Tradicional – 250g</td>
 <td>95</td>
 <td>R$ 9.49</td>
 <td>R$ 398.58</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450006">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Espaguete Adria Nº8 – 1kg</td>
 <td>91</td>
 <td>R$ 6.99</td>
 <td>R$ 433.38</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450006">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
-<tr data-bs-toggle="collapse" data-bs-target="#itens450007" aria-expanded="false" aria-controls="itens450007">
+
+<tr>
   <td>450007</td>
   <td>27/04/2025</td>
   <td>04/05/2025</td>
   <td><span class="badge bg-info text-dark">Em Transporte</span></td>
   <td>R$ 4.426,07</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450007">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450007">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450007">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450007">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450007">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Biscoito Recheado Treloso Chocolate 130g</td>
 <td>87</td>
 <td>R$ 3.29</td>
 <td>R$ 259.91</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450007">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Margarina Amorela com Sal – 1kg</td>
 <td>54</td>
 <td>R$ 8.99</td>
 <td>R$ 125.86</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450007">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Espaguete Adria Nº8 – 1kg</td>
 <td>73</td>
 <td>R$ 6.99</td>
 <td>R$ 601.14</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450007">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
-<tr data-bs-toggle="collapse" data-bs-target="#itens450008" aria-expanded="false" aria-controls="itens450008">
+
+<tr>
   <td>450008</td>
   <td>28/04/2025</td>
   <td>05/05/2025</td>
   <td><span class="badge bg-info text-dark">Em Transporte</span></td>
   <td>R$ 6.415,50</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450008">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450008">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450008">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450008">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450008">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Espaguete Adria Nº8 – 1kg</td>
 <td>50</td>
 <td>R$ 6.99</td>
 <td>R$ 321.54</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450008">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Cream Cracker Piraquê – 200g</td>
 <td>73</td>
 <td>R$ 4.29</td>
 <td>R$ 124.41</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450008">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Biscoito Recheado Treloso Chocolate 130g</td>
 <td>77</td>
 <td>R$ 3.29</td>
 <td>R$ 144.76</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450008">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
-<tr data-bs-toggle="collapse" data-bs-target="#itens450009" aria-expanded="false" aria-controls="itens450009">
+
+<tr>
   <td>450009</td>
   <td>29/04/2025</td>
   <td>06/05/2025</td>
   <td><span class="badge bg-info text-dark">Em Transporte</span></td>
   <td>R$ 10.294,11</td>
-  <td><button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#pedidoModal450009">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
+  <td>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pedidoModal450009">Detalhes</button>
+    <button class="btn btn-warning btn-sm" data-bs-toggle="collapse" data-bs-target="#itens450009">Itens</button>
+    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450009">Reportar Problema</button>
+  </td>
 </tr>
 <tr class="collapse" id="itens450009">
   <td colspan="6">
     <table class="table table-sm">
       <thead>
-        <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th><th>Ações</th></tr>
+        <tr><th>Produto</th><th>Quantidade</th><th>Valor Unitário</th><th>Valor Total</th></tr>
       </thead>
       <tbody>
-    
 <tr>
 <td>Margarina Amorela com Sal – 1kg</td>
 <td>79</td>
 <td>R$ 8.99</td>
 <td>R$ 800.11</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450009">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Cream Cracker Piraquê – 200g</td>
 <td>99</td>
 <td>R$ 4.29</td>
 <td>R$ 111.54</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450009">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
 <tr>
 <td>Espaguete Adria Nº8 – 1kg</td>
 <td>35</td>
 <td>R$ 6.99</td>
 <td>R$ 370.47</td>
-<td><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema450009">Reportar Problema</button><button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#reportarProblema
 </tr>
       </tbody>
     </table>
   </td>
 </tr>
+
 </tbody>
 </table>
 
+<script>
+function filterTable() {
+  var input, filter, table, tr, td, i, j, txtValue, show;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("pedidosTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i += 2) { // apenas linhas principais
+    td = tr[i].getElementsByTagName("td");
+    show = false;
+    for (j = 0; j < td.length - 1; j++) { // ignora ações
+      if (td[j]) {
+        txtValue = td[j].textContent || td[j].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          show = true;
+          break;
+        }
+      }
+    }
+    tr[i].style.display = show ? "" : "none";
+    if(tr[i+1]) tr[i+1].style.display = show ? "" : "none"; // expandidos juntos
+  }
+}
+</script>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450000" tabindex="-1" aria-labelledby="pedidoModalLabel450000" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450000</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450000" tabindex="-1" aria-labelledby="reportarProblemaLabel450000" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -505,6 +537,25 @@ function filterTable() {
     </div>
   </div>
 </div>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450001" tabindex="-1" aria-labelledby="pedidoModalLabel450001" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450001</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450001" tabindex="-1" aria-labelledby="reportarProblemaLabel450001" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -533,6 +584,25 @@ function filterTable() {
     </div>
   </div>
 </div>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450002" tabindex="-1" aria-labelledby="pedidoModalLabel450002" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450002</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450002" tabindex="-1" aria-labelledby="reportarProblemaLabel450002" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -561,6 +631,25 @@ function filterTable() {
     </div>
   </div>
 </div>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450003" tabindex="-1" aria-labelledby="pedidoModalLabel450003" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450003</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450003" tabindex="-1" aria-labelledby="reportarProblemaLabel450003" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -589,6 +678,25 @@ function filterTable() {
     </div>
   </div>
 </div>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450004" tabindex="-1" aria-labelledby="pedidoModalLabel450004" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450004</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450004" tabindex="-1" aria-labelledby="reportarProblemaLabel450004" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -617,6 +725,25 @@ function filterTable() {
     </div>
   </div>
 </div>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450005" tabindex="-1" aria-labelledby="pedidoModalLabel450005" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450005</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450005" tabindex="-1" aria-labelledby="reportarProblemaLabel450005" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -645,6 +772,25 @@ function filterTable() {
     </div>
   </div>
 </div>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450006" tabindex="-1" aria-labelledby="pedidoModalLabel450006" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450006</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450006" tabindex="-1" aria-labelledby="reportarProblemaLabel450006" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -673,6 +819,25 @@ function filterTable() {
     </div>
   </div>
 </div>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450007" tabindex="-1" aria-labelledby="pedidoModalLabel450007" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450007</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450007" tabindex="-1" aria-labelledby="reportarProblemaLabel450007" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -701,6 +866,25 @@ function filterTable() {
     </div>
   </div>
 </div>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450008" tabindex="-1" aria-labelledby="pedidoModalLabel450008" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450008</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450008" tabindex="-1" aria-labelledby="reportarProblemaLabel450008" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -729,6 +913,25 @@ function filterTable() {
     </div>
   </div>
 </div>
+
+<!-- Modal Detalhes Pedido -->
+<div class="modal fade" id="pedidoModal450009" tabindex="-1" aria-labelledby="pedidoModalLabel450009" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Pedido #450009</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
+        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
+        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reportar Problema -->
 <div class="modal fade" id="reportarProblema450009" tabindex="-1" aria-labelledby="reportarProblemaLabel450009" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -757,186 +960,8 @@ function filterTable() {
     </div>
   </div>
 </div>
+
 </div>
 </div>
-
-<!-- Botão flutuante do suporte -->
-<button type="button" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px;" data-bs-toggle="modal" data-bs-target="#chatBotModal">
-🤖
-</button>
-
-<!-- Modal do ChatBot -->
-<div class="modal fade" id="chatBotModal" tabindex="-1" aria-labelledby="chatBotModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="chatBotModalLabel">Suporte Online</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div style="height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
-          <div class="alert alert-primary p-2">Olá! Sou o Assistente Virtual. Como posso ajudar?</div>
-          <div class="alert alert-secondary p-2 align-self-end">Preciso da segunda via do meu boleto.</div>
-          <div class="alert alert-primary p-2">Certo! Você pode acessar a opção "Meus Pedidos" e clicar no pedido desejado para baixar o boleto.</div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <input type="text" class="form-control" placeholder="Digite sua mensagem..." disabled>
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
-
-<div class="modal fade" id="pedidoModal450000" tabindex="-1" aria-labelledby="pedidoModalLabel450000" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450000</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="pedidoModal450001" tabindex="-1" aria-labelledby="pedidoModalLabel450001" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450001</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="pedidoModal450002" tabindex="-1" aria-labelledby="pedidoModalLabel450002" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450002</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="pedidoModal450003" tabindex="-1" aria-labelledby="pedidoModalLabel450003" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450003</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="pedidoModal450004" tabindex="-1" aria-labelledby="pedidoModalLabel450004" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450004</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="pedidoModal450005" tabindex="-1" aria-labelledby="pedidoModalLabel450005" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450005</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="pedidoModal450006" tabindex="-1" aria-labelledby="pedidoModalLabel450006" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450006</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="pedidoModal450007" tabindex="-1" aria-labelledby="pedidoModalLabel450007" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450007</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="pedidoModal450008" tabindex="-1" aria-labelledby="pedidoModalLabel450008" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450008</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="pedidoModal450009" tabindex="-1" aria-labelledby="pedidoModalLabel450009" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detalhes do Pedido #450009</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Boletos:</strong> <a href="#">Baixar Boleto</a></p>
-        <p><strong>DANFE:</strong> <a href="#">Baixar DANFE</a></p>
-        <p><strong>XML NF-e:</strong> <a href="#">Baixar XML</a></p>
-      </div>
-    </div>
-  </div>
-</div>
